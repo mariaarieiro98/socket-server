@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cb97928c-2afa-4cbc-bf42-02401817d52a" name="Default Changelist" comment="" />
+    <list default="true" id="cb97928c-2afa-4cbc-bf42-02401817d52a" name="Default Changelist" comment="kkk">
+      <change beforePath="$PROJECT_DIR$/.env_sample" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,8 +74,16 @@
       <workItem from="1564057033944" duration="8595000" />
       <workItem from="1564132333202" duration="4108000" />
       <workItem from="1564157383561" duration="9000" />
-      <workItem from="1564389463846" duration="5038000" />
+      <workItem from="1564389463846" duration="6266000" />
     </task>
+    <task id="LOCAL-00001" summary="kkk">
+      <created>1564395394562</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1564395394563</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -98,5 +109,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="kkk" />
+    <option name="LAST_COMMIT_MESSAGE" value="kkk" />
   </component>
 </project>
