@@ -2,8 +2,11 @@ const app = require('express');
 const server = require('http').createServer();
 const io = require('socket.io')(server);
 
-server.listen(process.env.PORT);
-console.log(`Starting sever at ${process.env.PORT}`);
+const port = process.env.PORT;
+    server.listen(port, () =>
+    console.log(`Starting sever at ${port}`)
+    );
+
 
 //authentication library for socket.io
 const jwtAuth = require('socketio-jwt-auth');
