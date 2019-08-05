@@ -2,16 +2,11 @@ const app = require('express');
 const server = require('http').createServer();
 const io = require('socket.io')(server);
 
-    server.listen(80, () =>
-    console.log("Starting sever at port 80")
-    );
+server.listen(80, () =>
+    console.log("Starting sever at port 80"));
 
 //authentication library for socket.io
 const jwtAuth = require('socketio-jwt-auth');
-
-io.on("connection", (socket) => {
-
-    console.log("user connected");
 
     /*
     io.use(jwtAuth.authenticate({
@@ -52,4 +47,4 @@ io.on("connection", (socket) => {
             io.emit("users-changed", {user: socket.user, event: "disconnected"});
         });
     })
-}
+
