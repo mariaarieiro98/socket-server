@@ -2,11 +2,9 @@ const app = require('express');
 const server = require('http').createServer();
 const io = require('socket.io')(server);
 
-const port = process.env.PORT;
-    server.listen(port, () =>
-    console.log(`Starting sever at ${port}`)
+    server.listen(80, () =>
+    console.log("Starting sever at port 80")
     );
-
 
 //authentication library for socket.io
 const jwtAuth = require('socketio-jwt-auth');
@@ -26,29 +24,32 @@ io.on("connection", (socket) => {
         //return error
         return done(err);
         }
-
         if(!user) {
         //return fail with a error message
         return done(null, false, 'user does not exist');
         }
-
         //return success with an error message
         return done(null,user);
         });
     }));
     */
 
-    socket.on("user-connected", user => {
-        socket.user = user;
+    io.on("connection", (socket) => {
 
-        socket.broadcast.emit("users-changed", { user: user, event: "connected"});
-    });
+        console.log("user connected");
 
-    socket.on("message", data => {
-        io.emit("message", data);
-    });
+        socket.on("user-connected", user => {
+            socket.user = user;
 
-    socket.on("disconnect", () => {
-        io.emit("users-changed" , { user: socket.user, event: "disconnected"});
-    });
-})
+            socket.broadcast.emit("users-changed", {user: user, event: "connected"});
+        });
+
+        socket.on("message", data => {
+            io.emit("message", data);
+        });
+
+        socket.on("disconnect", () => {
+            io.emit("users-changed", {user: socket.user, event: "disconnected"});
+        });
+    })
+}
